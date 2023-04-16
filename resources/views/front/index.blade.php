@@ -6,46 +6,16 @@
 
 @section("content")
 
+    <x-article>
+        <x-slot:title2>Makale2</x-slot:title2>
+        <x-slot name="title">Makale 1</x-slot>
+        <hr>
+        <x-slot name="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi commodi culpa debitis dolorum, eaque eum ipsum odit officia placeat reprehenderit velit voluptatibus? At atque dolor earum inventore nam non voluptas.
+        </x-slot>
 
+    </x-article>
 
-    <form action="" method="POST">
-        @csrf
-{{--        @method("DELETE")--}}
-        @auresMethod('put')
-
-        <input type="text" name="fullname">
-        <button type="submit">Gönder</button>
-    </form>
-
-
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-
-    <hr>
-    içerik alanı
-    <hr>
-    Gelen Yaş: {{ $age ?? @$person -> age}}
-    <hr>
-    Gelen Isim: {{ $name ?? @$person -> name }}
-    <hr>
-    @if(isset($person) && isset($person -> age))
-        @switch($person -> age)
-            @case(10)
-                Çocuk
-                @break
-            @case(20)
-                Genç
-                @break
-            @default
-                Yaşlandın
-        @endswitch
-    @else
-        gelmedi
-    @endif
-    <hr>
 @endsection
 
 @section("js")
